@@ -1,5 +1,6 @@
 #!/bin/sh
 
+function initialise_desktop {
 tmux new-session -d -s convo ;
 tmux split-window -h ;
 
@@ -10,3 +11,7 @@ tmux select-pane -R
 tmux send-keys -t convo 'tail -f /usr/local/apache-tomcat-8.5.12/logs/catalina.out' C-m
 
 tmux attach-session -d -t convo
+
+}
+
+initialise_desktop
